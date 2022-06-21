@@ -66,6 +66,8 @@ uint8_t getMask(size_t pos) {
 }
 
 void encrypt(std::string fileName, std::string type, std::string pswFn = "") {
+    if (type != "kgm" && type != "vpr")
+        return;
     std::fstream infile(fileName, std::ios::in | std::ios::binary);
 
     if (!infile.is_open()) {
